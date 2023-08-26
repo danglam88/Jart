@@ -17,12 +17,24 @@ public class Line implements Drawable {
         return this.point2;
     }
 
+    /**
+     * Draws a line on the given displayable object.
+     *
+     * @param  displayable  the displayable object to draw on
+     */
     public void draw(Displayable displayable) {
         Image image = (Image) displayable;
         image.getG2d().setColor(this.getColor());
         image.getG2d().drawLine(this.getPoint1().getX(), this.getPoint1().getY(), this.getPoint2().getX(), this.getPoint2().getY());
     }
 
+    /**
+     * Generates a random Line object with the specified width and height.
+     *
+     * @param  width  the width of the coordinate space
+     * @param  height the height of the coordinate space
+     * @return        a random Line object
+     */
     public static Line random(int width, int height) {
         Point point1 = Point.random(width, height);
         Point point2 = Point.random(width, height);

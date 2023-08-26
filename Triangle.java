@@ -26,8 +26,8 @@ public class Triangle implements Drawable {
     public void draw(Displayable displayable) {
         Image image = (Image) displayable;
         image.getG2d().setColor(this.getColor());
-        int[] xPoints = {this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX()};
-        int[] yPoints = {this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY()};
+        int[] xPoints = { this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX() };
+        int[] yPoints = { this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY() };
         image.getG2d().drawPolygon(xPoints, yPoints, 3);
     }
 }
