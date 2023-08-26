@@ -38,13 +38,13 @@ public class Image implements Displayable {
      * 
      * @param width  The width of the image.
      * @param height The height of the image.
-     * @param color  The color to fill the image with.
+     * @param color  The color to fill the image.
      */
     public void display(int width, int height, Color color) {
         // Create a new BufferedImage with the specified dimensions and type.
         this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
-        // Get the Graphics2D object from the image.
+        // Create the Graphics2D object on the image.
         this.g2d = this.image.createGraphics();
 
         // Set the color of the Graphics2D object to the specified color.

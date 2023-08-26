@@ -38,7 +38,7 @@ public class Rectangle implements Drawable {
         // Cast the displayable object to an Image
         Image image = (Image) displayable;
 
-        // Set the color of the graphic context to the color of this object
+        // Set the color of the graphics object to the color of the shape
         image.getG2d().setColor(this.getColor());
 
         // Draw a rectangle with the specified dimensions at the specified position

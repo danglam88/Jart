@@ -30,7 +30,7 @@ public class Cube implements Drawable {
         // Cast the displayable object to an Image
         Image image = (Image) displayable;
 
-        // Set the color of the graphic context to the color of this object
+        // Set the color of the graphics object to the color of the shape
         image.getG2d().setColor(this.getColor());
 
         // Draw 2 squares
@@ -43,6 +43,5 @@ public class Cube implements Drawable {
         image.getG2d().drawLine(x + this.getWidth(), y + this.getWidth(), x + this.getWidth() + quarterWidth,
                 y + this.getWidth() + quarterWidth);
         image.getG2d().drawLine(x, y + this.getWidth(), x + quarterWidth, y + this.getWidth() + quarterWidth);
-
     }
 }

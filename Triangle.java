@@ -37,7 +37,7 @@ public class Triangle implements Drawable {
         int[] xPoints = { this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX() };
         int[] yPoints = { this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY() };
 
-        // Draw the polygon on the image
+        // Draw the polygon with 3 sides (triangle) on the image
         image.getG2d().drawPolygon(xPoints, yPoints, 3);
     }
 }
