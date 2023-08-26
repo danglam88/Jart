@@ -34,7 +34,8 @@ public class Main {
         rectangle.draw(image);
 
         // Create a triangle with three points and draw it on the image
-        Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
+        Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900),
+                new Point(100, 900));
         triangle.draw(image);
 
         // Create 50 random circles and draw them on the image
@@ -46,6 +47,10 @@ public class Main {
         // Create a pentagon and draw it on the image
         Pentagon pentagon = new Pentagon(new Point(500, 500), 200);
         pentagon.draw(image);
+
+        // Create a cube and draw it on the image
+        Cube cube = new Cube(new Point(500, 500), 200);
+        cube.draw(image);
 
         // Save the image as "image.png"
         image.save("image.png");
