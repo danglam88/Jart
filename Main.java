@@ -44,7 +44,7 @@ public class Main {
         }
 
         // Create a pentagon and draw it on the image
-        Pentagon pentagon = new Pentagon(500, 500, 200);
+        Pentagon pentagon = new Pentagon(new Point(500, 500), 200);
         pentagon.draw(image);
 
         // Save the image as "image.png"

@@ -1,17 +1,22 @@
 import java.awt.Polygon;
 
 public class Pentagon implements Drawable {
-    private int x;
-    private int y;
+    private Point point;
     private int radius;
 
-    public Pentagon(int x, int y, int radius) {
-        this.x = x;
-        this.y = y;
+    public Pentagon(Point point, int radius) {
+        this.point = point;
         this.radius = radius;
     }
 
+    public Point getPoint() {
+        return this.point;
+    }
+
     public void draw(Displayable displayable) {
+        int x = this.getPoint().getX();
+        int y = this.getPoint().getY();
+
         // Cast the displayable object to an Image
         Image image = (Image) displayable;
 
