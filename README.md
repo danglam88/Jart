@@ -16,7 +16,7 @@ This project is designed to create, customize, and save images consisting of ran
 The project includes the following classes:
 
 - `Point.java`: Represents a point in a 2D space, primarily used for creating shapes.
-- `Rectangle.java`, `Circle.java`, `Line.java`: Represent different shapes. Each shape can draw itself on a Displayable object (like an image).
+- `Rectangle.java`, `Circle.java`, `Line.java`, `Triangle.java`, `Pentagon.java`: Represent different shapes. Each shape can draw itself on a Displayable object (like an image).
 - `Image.java`: Represents an image with a specified width and height. Enables drawing shapes on the image and saving it as a PNG file.
 - `Main.java`: The entry point of the application. It generates an image, draws shapes on it, and saves the image as a PNG file.
 
