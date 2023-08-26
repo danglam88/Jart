@@ -1,5 +1,3 @@
-import java.awt.Graphics2D;
-
 public class Triangle implements Drawable {
     private Point point1;
     private Point point2;
@@ -23,11 +21,23 @@ public class Triangle implements Drawable {
         return this.point3;
     }
 
+    /**
+     * Draws a polygon on the given displayable object.
+     * 
+     * @param displayable The displayable object on which to draw the polygon.
+     */
     public void draw(Displayable displayable) {
+        // Cast the displayable object to an Image
         Image image = (Image) displayable;
+
+        // Set the color of the graphics object to the color of the shape
         image.getG2d().setColor(this.getColor());
+
+        // Get the x and y coordinates of the polygon's points
         int[] xPoints = { this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX() };
         int[] yPoints = { this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY() };
+
+        // Draw the polygon on the image
         image.getG2d().drawPolygon(xPoints, yPoints, 3);
     }
 }

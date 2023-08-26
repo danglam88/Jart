@@ -1,5 +1,3 @@
-import java.awt.Graphics2D;
-
 public class Rectangle implements Drawable {
     private Point point;
     private int width;
@@ -31,9 +29,23 @@ public class Rectangle implements Drawable {
         return this.height;
     }
 
+    /**
+     * Draws a rectangle on the given displayable object.
+     * 
+     * @param displayable The object on which the rectangle will be drawn.
+     */
     public void draw(Displayable displayable) {
+        // Cast the displayable object to an Image
         Image image = (Image) displayable;
+
+        // Set the color of the graphic context to the color of this object
         image.getG2d().setColor(this.getColor());
-        image.getG2d().drawRect(this.getPoint().getX(), this.getPoint().getY(), this.getWidth(), this.getHeight());
+
+        // Draw a rectangle with the specified dimensions at the specified position
+        image.getG2d().drawRect(
+                this.getPoint().getX(),
+                this.getPoint().getY(),
+                this.getWidth(),
+                this.getHeight());
     }
 }

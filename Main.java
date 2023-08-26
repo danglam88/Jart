@@ -10,6 +10,9 @@ interface Displayable {
 interface Drawable {
     void draw(Displayable displayable);
 
+    /**
+     * @return The randomly generated Color object.
+     */
     default Color getColor() {
         Random random = new Random();
         return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));

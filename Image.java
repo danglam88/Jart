@@ -33,18 +33,39 @@ public class Image implements Displayable {
         return this.g2d;
     }
 
-    public void display(int x, int y, Color color) {
-        this.image = new BufferedImage(x, y, BufferedImage.TYPE_INT_ARGB);
+    /**
+     * Display the image with the specified dimensions and color.
+     * 
+     * @param width  The width of the image.
+     * @param height The height of the image.
+     * @param color  The color to fill the image with.
+     */
+    public void display(int width, int height, Color color) {
+        // Create a new BufferedImage with the specified dimensions and type.
+        this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+
+        // Get the Graphics2D object from the image.
         this.g2d = this.image.createGraphics();
+
+        // Set the color of the Graphics2D object to the specified color.
         this.g2d.setColor(color);
     }
 
-    public void save(String string) {
+    /**
+     * Saves the image to a file.
+     *
+     * @param filePath The path of the file to save the image to.
+     */
+    public void save(String filePath) {
+        // Dispose the graphics object
         this.getG2d().dispose();
+
         try {
-            File output = new File(string);
+            File output = new File(filePath);
+
             ImageIO.write(this.getImage(), "PNG", output);
-            System.out.println("Image saved to " + string);
+
+            System.out.println("Image saved to " + filePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
