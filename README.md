@@ -11,16 +11,16 @@
 
 ## Description
 
-This project is designed to create, customize, and save images consisting of random shapes and colors. Using Java's AWT library, we have developed a series of classes that represent different shapes and images, and a main class that brings it all together to create a PNG image.
+This project is designed to create, customize, and save images consisting of random shapes and colors. Using Java's AWT library, we have developed a series of classes that represent different shapes and colors, and a main class that brings them all together to create a PNG image.
 
 The project includes the following classes:
 
 - `Point.java`: Represents a point in a 2D space, primarily used for creating shapes.
-- `Rectangle.java`, `Circle.java`, `Line.java`, `Triangle.java`, `Pentagon.java`: Represent different shapes. Each shape can draw itself on a Displayable object (like an image).
+- `Rectangle.java`, `Circle.java`, `Line.java`, `Triangle.java`, `Pentagon.java`: Represent different shapes. Each shape can draw itself on a Displayable object (like an Image).
 - `Image.java`: Represents an image with a specified width and height. Enables drawing shapes on the image and saving it as a PNG file.
 - `Main.java`: The entry point of the application. It generates an image, draws shapes on it, and saves the image as a PNG file.
 
-Each shape class implements the `Drawable` interface, which ensures that a shape can draw itself. The `Displayable` interface is also used, which includes methods for displaying and saving Image objects.
+Each shape class implements the `Drawable` interface, which ensures that a shape can draw itself on the image. Image class implements the `Displayable` interface, which includes methods for displaying and saving image to a file.
 
 ## Installation
 
@@ -32,7 +32,7 @@ git clone https://github.com/danglam88/Jart.git
 
 ## Usage
 
-To run the project, navigate to the directory containing the `Main.java` file and compile and run the file using the Java compiler.
+To run the project, navigate to the directory containing the `Main.java` file, then compile and run the output using the Java compiler.
 
 ```bash
 javac -d build Main.java
@@ -46,11 +46,11 @@ This will generate a PNG image named "image.png" in the same directory.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Contributing
 
-Contributions are welcome. Please open an issue or submit a pull request if you would like to help improve the project.
+Contributions are welcome. Please open an issue or submit a pull request if you would like to help improving the project.
 
 ## Authors
 

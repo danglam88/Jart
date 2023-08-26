@@ -22,11 +22,11 @@ interface Drawable {
 public class Main {
     /*
      * This is the main method of the program.
-     * It creates and image and draws shapes on it.
+     * It creates an image and draws shapes on it.
      * Finally, it saves the image as "image.png"
      */
     public static void main(String[] args) {
-        // Create a mew image with dimentions 1000x1000
+        // Create a mew image with dimensions 1000x1000
         Image image = new Image(1000, 1000);
 
         // Create a rectangle with two points and draw it on the image

@@ -21,8 +21,13 @@ public class Line implements Drawable {
      * @param displayable the displayable object to draw on
      */
     public void draw(Displayable displayable) {
+        // Cast the displayable object to an Image
         Image image = (Image) displayable;
+
+        // Set the color of the graphics object to the color of the shape
         image.getG2d().setColor(this.getColor());
+
+        // Draw the line on the image
         image.getG2d().drawLine(this.getPoint1().getX(), this.getPoint1().getY(), this.getPoint2().getX(),
                 this.getPoint2().getY());
     }

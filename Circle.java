@@ -18,8 +18,13 @@ public class Circle implements Drawable {
     }
 
     public void draw(Displayable displayable) {
+        // Cast the displayable object to an Image
         Image image = (Image) displayable;
+
+        // Set the color of the graphics object to the color of the shape
         image.getG2d().setColor(this.getColor());
+
+        // Draw the circle (within the square where its top-left point and its side are given) on the image
         image.getG2d().drawOval(this.getCenter().getX() - this.getRadius(), this.getCenter().getY() - this.getRadius(),
                 this.getRadius() * 2, this.getRadius() * 2);
     }
