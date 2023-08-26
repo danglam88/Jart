@@ -43,6 +43,10 @@ public class Main {
             circle.draw(image);
         }
 
+        // Create a pentagon and draw it on the image
+        Pentagon pentagon = new Pentagon(500, 500, 200);
+        pentagon.draw(image);
+
         // Save the image as "image.png"
         image.save("image.png");
     }
