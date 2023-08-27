@@ -15,6 +15,14 @@ public class Pentagon implements Drawable {
         return this.point;
     }
 
+    public int getRadius() {
+        return this.radius;
+    }
+
+    public int getTilt() {
+        return this.tilt;
+    }
+
     public void draw(Displayable displayable) {
         int x = this.getPoint().getX();
         int y = this.getPoint().getY();
@@ -30,9 +38,9 @@ public class Pentagon implements Drawable {
 
         // Calculate the x and y coordinates of the five points of the pentagon
         for (int i = 0; i < 5; i++) {
-            double angle = 2 * Math.PI / 5 * i + Math.toRadians(this.tilt) - Math.PI / 2;
-            int px = (int) (x + radius * Math.cos(angle));
-            int py = (int) (y + radius * Math.sin(angle));
+            double angle = 2 * Math.PI / 5 * i + Math.toRadians(this.getTilt()) - Math.PI / 2;
+            int px = (int) (x + this.getRadius() * Math.cos(angle));
+            int py = (int) (y + this.getRadius() * Math.sin(angle));
             pentagon.addPoint(px, py);
         }
 
