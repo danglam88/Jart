@@ -62,7 +62,7 @@ public class Main {
         }
 
         // Create a pentagon and draw it on the image
-        Pentagon pentagon = new Pentagon(new Point(500, 300), 200);
+        Pentagon pentagon = new Pentagon(new Point(500, 300), 200, 0);
         pentagon.draw(image);
 
         // Create a cube and draw it on the image

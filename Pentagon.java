@@ -3,10 +3,12 @@ import java.awt.Polygon;
 public class Pentagon implements Drawable {
     private Point point;
     private int radius;
+    private int tilt;
 
-    public Pentagon(Point point, int radius) {
+    public Pentagon(Point point, int radius, int tilt) {
         this.point = point;
         this.radius = radius;
+        this.tilt = tilt;
     }
 
     public Point getPoint() {
@@ -28,7 +30,7 @@ public class Pentagon implements Drawable {
 
         // Calculate the x and y coordinates of the five points of the pentagon
         for (int i = 0; i < 5; i++) {
-            double angle = 2 * Math.PI / 5 * i;
+            double angle = 2 * Math.PI / 5 * i + Math.toRadians(this.tilt) - Math.PI / 2;
             int px = (int) (x + radius * Math.cos(angle));
             int py = (int) (y + radius * Math.sin(angle));
             pentagon.addPoint(px, py);
