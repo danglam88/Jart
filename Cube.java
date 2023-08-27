@@ -25,7 +25,7 @@ public class Cube implements Drawable {
     public void draw(Displayable displayable) {
         int x = this.getPoint().getX();
         int y = this.getPoint().getY();
-        int quarterWidth = this.getWidth() / 4;
+        int halfWidth = this.getWidth() / 2;
 
         // Cast the displayable object to an Image
         Image image = (Image) displayable;
@@ -35,13 +35,13 @@ public class Cube implements Drawable {
 
         // Draw 2 squares
         image.getG2d().drawRect(x, y, this.getWidth(), this.getWidth());
-        image.getG2d().drawRect(x + quarterWidth, y + quarterWidth, this.getWidth(), this.getWidth());
+        image.getG2d().drawRect(x + halfWidth, y + halfWidth, this.getWidth(), this.getWidth());
 
         // Draw the lines connecting the squares
-        image.getG2d().drawLine(x, y, x + quarterWidth, y + quarterWidth);
-        image.getG2d().drawLine(x + this.getWidth(), y, x + this.getWidth() + quarterWidth, y + quarterWidth);
-        image.getG2d().drawLine(x + this.getWidth(), y + this.getWidth(), x + this.getWidth() + quarterWidth,
-                y + this.getWidth() + quarterWidth);
-        image.getG2d().drawLine(x, y + this.getWidth(), x + quarterWidth, y + this.getWidth() + quarterWidth);
+        image.getG2d().drawLine(x, y, x + halfWidth, y + halfWidth);
+        image.getG2d().drawLine(x + this.getWidth(), y, x + this.getWidth() + halfWidth, y + halfWidth);
+        image.getG2d().drawLine(x + this.getWidth(), y + this.getWidth(), x + this.getWidth() + halfWidth,
+                y + this.getWidth() + halfWidth);
+        image.getG2d().drawLine(x, y + this.getWidth(), x + halfWidth, y + this.getWidth() + halfWidth);
     }
 }

@@ -66,7 +66,7 @@ public class Main {
         pentagon.draw(image);
 
         // Create a cube and draw it on the image
-        Cube cube = new Cube(new Point(500, 500), 200);
+        Cube cube = new Cube(new Point(400, 500), 200);
         cube.draw(image);
 
         // Save the image as "image.png"
