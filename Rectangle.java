@@ -35,17 +35,23 @@ public class Rectangle implements Drawable {
      * @param displayable The object on which the rectangle will be drawn.
      */
     public void draw(Displayable displayable) {
-        // Cast the displayable object to an Image
-        Image image = (Image) displayable;
+        try {
+            // Cast the displayable object to an Image
+            Image image = (Image) displayable;
 
-        // Set the color of the graphics object to the color of the shape
-        image.getG2d().setColor(this.getColor());
+            // Set the color of the graphics object to the color of the shape
+            image.getG2d().setColor(this.getColor());
 
-        // Draw a rectangle with the specified dimensions at the specified position
-        image.getG2d().drawRect(
-                this.getPoint().getX(),
-                this.getPoint().getY(),
-                this.getWidth(),
-                this.getHeight());
+            // Draw a rectangle with the specified dimensions at the specified position
+            image.getG2d().drawRect(
+                    this.getPoint().getX(),
+                    this.getPoint().getY(),
+                    this.getWidth(),
+                    this.getHeight());
+        } catch (ClassCastException e) {
+            // Handle the case where casting to an Image fails
+            System.out.println("Displayable object is not an Image");
+            e.printStackTrace();
+        }
     }
 }

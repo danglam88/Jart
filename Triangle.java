@@ -27,17 +27,23 @@ public class Triangle implements Drawable {
      * @param displayable The displayable object on which to draw the polygon.
      */
     public void draw(Displayable displayable) {
-        // Cast the displayable object to an Image
-        Image image = (Image) displayable;
+        try {
+            // Cast the displayable object to an Image
+            Image image = (Image) displayable;
 
-        // Set the color of the graphics object to the color of the shape
-        image.getG2d().setColor(this.getColor());
+            // Set the color of the graphics object to the color of the shape
+            image.getG2d().setColor(this.getColor());
 
-        // Get the x and y coordinates of the polygon's points
-        int[] xPoints = { this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX() };
-        int[] yPoints = { this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY() };
+            // Get the x and y coordinates of the polygon's points
+            int[] xPoints = {this.getPoint1().getX(), this.getPoint2().getX(), this.getPoint3().getX()};
+            int[] yPoints = {this.getPoint1().getY(), this.getPoint2().getY(), this.getPoint3().getY()};
 
-        // Draw the polygon with 3 sides (triangle) on the image
-        image.getG2d().drawPolygon(xPoints, yPoints, 3);
+            // Draw the polygon with 3 sides (triangle) on the image
+            image.getG2d().drawPolygon(xPoints, yPoints, 3);
+        } catch (ClassCastException e) {
+            // Handle the case where casting to an Image fails
+            System.out.println("Displayable object is not an Image");
+            e.printStackTrace();
+        }
     }
 }

@@ -24,27 +24,30 @@ public class Pentagon implements Drawable {
     }
 
     public void draw(Displayable displayable) {
-        int x = this.getPoint().getX();
-        int y = this.getPoint().getY();
+        try {
+            // Cast the displayable object to an Image
+            Image image = (Image) displayable;
 
-        // Cast the displayable object to an Image
-        Image image = (Image) displayable;
+            // Set the color of the graphics object to the color of the shape
+            image.getG2d().setColor(this.getColor());
 
-        // Set the color of the graphics object to the color of the shape
-        image.getG2d().setColor(this.getColor());
+            // Create a new Polygon object to represent the pentagon
+            Polygon pentagon = new Polygon();
 
-        // Create a new Polygon object to represent the pentagon
-        Polygon pentagon = new Polygon();
+            // Calculate the x and y coordinates of the five points of the pentagon
+            for (int i = 0; i < 5; i++) {
+                double angle = 2 * Math.PI / 5 * i + Math.toRadians(this.getTilt()) - Math.PI / 2;
+                int px = (int) (this.getPoint().getX() + this.getRadius() * Math.cos(angle));
+                int py = (int) (this.getPoint().getY() + this.getRadius() * Math.sin(angle));
+                pentagon.addPoint(px, py);
+            }
 
-        // Calculate the x and y coordinates of the five points of the pentagon
-        for (int i = 0; i < 5; i++) {
-            double angle = 2 * Math.PI / 5 * i + Math.toRadians(this.getTilt()) - Math.PI / 2;
-            int px = (int) (x + this.getRadius() * Math.cos(angle));
-            int py = (int) (y + this.getRadius() * Math.sin(angle));
-            pentagon.addPoint(px, py);
+            // Draw the pentagon on the image
+            image.getG2d().drawPolygon(pentagon);
+        } catch (ClassCastException e) {
+            // Handle the case where casting to an Image fails
+            System.out.println("Displayable object is not an Image");
+            e.printStackTrace();
         }
-
-        // Draw the pentagon on the image
-        image.getG2d().drawPolygon(pentagon);
     }
 }

@@ -67,6 +67,8 @@ public class Image implements Displayable {
 
             System.out.println("Image saved to " + filePath);
         } catch (IOException e) {
+            // Handle the case where saving to a file fails
+            System.out.println("Error saving image to " + filePath);
             e.printStackTrace();
         }
     }
